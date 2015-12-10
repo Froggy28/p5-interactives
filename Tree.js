@@ -12,11 +12,22 @@ var button5 = document.getElementById("button5");
 var input6 = document.getElementById("input6");
 var button6 = document.getElementById("button6");
 var button7 = document.getElementById("button7");
-var hasStar = false;
+
 
 
 function setup() {
     createCanvas(1300, 700);
+
+    var hasStar = false;
+    button7.addEventListener("click", function() {
+        hasStar = true;
+        if (hasStar === true) {
+            var img = loadImage("stars.png");
+            imageSprite = createSprite(645,120);
+            imageSprite.addImage(img);
+            drawSprites();
+        }
+    });
 
     // sets original colors
     var colors = color('brown');
@@ -67,22 +78,11 @@ function setup() {
         var topColor = color(input6.value);
         fill(topColor);
         var topping = ellipse(645, 120, 50, 50);
-    });
-
-
-    button7.addEventListener("click", function() {
-        var hasStar = true;
-        if (hasStar === true) {
-            var img = loadImage("startopper.png");
-            topping = createSprite(60, 60);
-            topping.addImage(img);
-        }
-    });
+    })
 
     //Changes color of text
     button1.addEventListener("click", function() {
         var newColor = input1.value;
         theParagraph.style.color = newColor;
     });
-
 }

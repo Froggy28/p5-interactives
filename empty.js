@@ -76,16 +76,16 @@ function draw() {
   }
 
   if (keyDown(65)) {
-    box.position.x -= 10;
+    box.position.x -= 9;
   }
   if (keyDown(68)) {
-    box.position.x += 10;
+    box.position.x += 9;
   }
    if (keyDown(87)) {
-    box.position.y -= 10;
+    box.position.y -= 9;
   }
   if (keyDown(83)) {
-    box.position.y += 10;
+    box.position.y += 9;
   }
 
 
