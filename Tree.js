@@ -11,6 +11,9 @@ var input5 = document.getElementById("input5");
 var button5 = document.getElementById("button5");
 var input6 = document.getElementById("input6");
 var button6 = document.getElementById("button6");
+var button7 = document.getElementById("button7");
+var hasStar = false;
+
 
 function setup() {
     createCanvas(1300, 700);
@@ -64,8 +67,17 @@ function setup() {
         var topColor = color(input6.value);
         fill(topColor);
         var topping = ellipse(645, 120, 50, 50);
-    })
+    });
 
+
+    button7.addEventListener("click", function() {
+        var hasStar = true;
+        if (hasStar === true) {
+            var img = loadImage("startopper.png");
+            topping = createSprite(60, 60);
+            topping.addImage(img);
+        }
+    });
 
     //Changes color of text
     button1.addEventListener("click", function() {
@@ -74,25 +86,3 @@ function setup() {
     });
 
 }
-//tring to keep layers consistent
-// function draw(){
-
-//      var colors = color('brown');
-//     fill(colors);
-//     var stump = rect(610, 360, 70, 70);
-
-    
-//     //sets original colors for tree
-//     var c = color('green');
-//     fill(c);
-
-//     var tri3 = triangle(455, 370, 645, 200, 825, 370);
-//     var tri2 = triangle(455, 310, 645, 190, 815, 310);
-//     var tri = triangle(473, 245, 645, 125, 795, 245);
-
-   
-//     //Tree topping, and colors
-//     var co = color("silver");
-//     fill(co);
-//     var topping = ellipse(645, 120, 50, 50);
-// }
