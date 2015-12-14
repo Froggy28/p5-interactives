@@ -12,22 +12,17 @@ var button5 = document.getElementById("button5");
 var input6 = document.getElementById("input6");
 var button6 = document.getElementById("button6");
 var button7 = document.getElementById("button7");
-
+var button8 = document.getElementById("button8");
+var button9 = document.getElementById("button9");
+var button10 = document.getElementById("button10");
+var hasStar = false;
+var hasMinion = false;
+var hasFrog = false;
+var hasOrnaments = false;
 
 
 function setup() {
     createCanvas(1300, 700);
-
-    var hasStar = false;
-    button7.addEventListener("click", function() {
-        hasStar = true;
-        if (hasStar === true) {
-            var img = loadImage("stars.png");
-            imageSprite = createSprite(645,120);
-            imageSprite.addImage(img);
-            drawSprites();
-        }
-    });
 
     // sets original colors
     var colors = color('brown');
@@ -78,11 +73,73 @@ function setup() {
         var topColor = color(input6.value);
         fill(topColor);
         var topping = ellipse(645, 120, 50, 50);
-    })
+    });
 
-    //Changes color of text
+    // //Changes color of text
     button1.addEventListener("click", function() {
         var newColor = input1.value;
         theParagraph.style.color = newColor;
     });
+    button9.addEventListener("click", function() {
+        hasFrog = true;
+        console.log("clicking frog")
+ if (hasFrog === true) {
+        var img3 = loadImage("froggy.png");
+        imageSprite = createSprite(645, 100);
+        imageSprite.addImage(img3);
+        drawSprites();
+        console.log("drawing frog");
+    }
+    });
+
+    button7.addEventListener("click", function() {
+        hasStar = true;
+    });
+    button8.addEventListener("click", function() {
+        hasMinion = true;
+
+    });
+
+    //adding ornaments
+    button10.addEventListener("click", function() {
+        hasOrnaments = true;
+        if (hasOrnaments === true) {
+            var ornament = loadImage("ornament.png");
+            imageSprite = createSprite(620, 200);
+            imageSprite.addImage(ornament);
+            imageSprite = createSprite(560, 260);
+            imageSprite.addImage(ornament);
+            imageSprite = createSprite(680, 280);
+            imageSprite.addImage(ornament);
+            imageSprite = createSprite(560, 330);
+            imageSprite.addImage(ornament);
+            imageSprite = createSprite(700, 340);
+            imageSprite.addImage(ornament);
+            drawSprites();
+        }
+    });
+}
+
+
+
+
+
+function draw() {
+    
+    // clearRect();
+
+    if (hasStar === true) {
+        var img = loadImage("stars.png");
+        imageSprite = createSprite(645, 120);
+        imageSprite.addImage(img);
+        drawSprites();
+    }
+
+    if (hasStar === true) {
+        var img2 = loadImage("minion.png");
+        imageSprite = createSprite(645, 80);
+        imageSprite.addImage(img2);
+        drawSprites();
+    }
+
 }
