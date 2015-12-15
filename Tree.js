@@ -15,15 +15,28 @@ var button7 = document.getElementById("button7");
 var button8 = document.getElementById("button8");
 var button9 = document.getElementById("button9");
 var button10 = document.getElementById("button10");
+var button11=document.getElementById("button11");
 var hasStar = false;
 var hasMinion = false;
 var hasFrog = false;
 var hasOrnaments = false;
 
 
-function setup() {
+function setup(){
     createCanvas(1300, 700);
 
+
+//puts presents under tree
+button11.addEventListener("click", function() {
+    var presentimg=loadImage("present.png");
+    imageSprite=createSprite(590,400);
+    imageSprite.addImage(presentimg);
+    var presentimg2=loadImage("present2.png");
+    imageSprite2=createSprite(720,400);
+    imageSprite2.addImage(presentimg2);
+    drawSprites();
+     
+});
     // sets original colors
     var colors = color('brown');
     fill(colors);
@@ -80,23 +93,17 @@ function setup() {
         var newColor = input1.value;
         theParagraph.style.color = newColor;
     });
+    
+    //The next few functions add toppers
     button9.addEventListener("click", function() {
-        hasFrog = true;
-        console.log("clicking frog")
- if (hasFrog === true) {
-        var img3 = loadImage("froggy.png");
-        imageSprite = createSprite(645, 100);
-        imageSprite.addImage(img3);
-        drawSprites();
-        console.log("drawing frog");
-    }
+        hasFrog = !hasFrog;
     });
-
+     
     button7.addEventListener("click", function() {
-        hasStar = true;
+        hasStar = !hasStar;
     });
     button8.addEventListener("click", function() {
-        hasMinion = true;
+        hasMinion = !hasMinion;
 
     });
 
@@ -120,14 +127,16 @@ function setup() {
     });
 }
 
-
-
-
-
-function draw() {
+function draw(){
     
-    // clearRect();
-
+if (hasFrog === true) {
+        var img3 = loadImage("froggy.png");
+        imageSprite = createSprite(645, 100);
+        imageSprite.addImage(img3);
+        drawSprites();
+        console.log("drawing frog");
+    }
+    else{}
     if (hasStar === true) {
         var img = loadImage("stars.png");
         imageSprite = createSprite(645, 120);
@@ -135,11 +144,18 @@ function draw() {
         drawSprites();
     }
 
-    if (hasStar === true) {
+    if (hasMinion === true) {
         var img2 = loadImage("minion.png");
         imageSprite = createSprite(645, 80);
         imageSprite.addImage(img2);
         drawSprites();
     }
-
+//     function mousePressed(){
+//     var dotimg=loadImage("present.png");
+//   var dots = createSprite(mouseX, mouseY, 30, 30);
+//     dots.addImage(dotimg);
+//   dots.velocity.x = random(-5, 5);
+//   dots.velocity.y = random(-5, 5);
+// drawSprites();
+// }
 }
