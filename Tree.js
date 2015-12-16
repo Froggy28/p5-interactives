@@ -16,7 +16,7 @@ var button8 = document.getElementById("button8");
 var button9 = document.getElementById("button9");
 var button10 = document.getElementById("button10");
 var button11 = document.getElementById("button11");
-var button12=document.getElementById("button12")
+var button12=document.getElementById("button12");
 var hasStar = false;
 var hasMinion = false;
 var hasFrog = false;
@@ -47,7 +47,7 @@ function setup() {
 
     // //adding ornaments
     button10.addEventListener("click", function() {
-        hasOrnaments = true;
+        hasOrnaments = !hasOrnaments;
     });
 }
 
@@ -59,8 +59,7 @@ function draw() {
         var cc = color(input3.value);
         fill(cc);
     });
-
-    fill(colors);
+     fill(colors);
     var stump = rect(610, 360, 70, 70);
 
     //changes colors for tree
@@ -68,10 +67,12 @@ function draw() {
 var color3=color(input5.value);
     fill(color3);
     var tri3 = triangle(455, 370, 645, 200, 825, 370);
+    
     var color2=color(input4.value);
     fill(color2);
     var tri2 = triangle(455, 310, 645, 190, 815, 310);
-    var color1=color(input2.value);
+   
+    var color1= color(input2.value);
     fill(color1)
     var tri = triangle(473, 245, 645, 125, 795, 245);
 
