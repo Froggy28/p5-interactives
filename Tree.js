@@ -86,7 +86,7 @@ function setup() {
 }
 
 function draw() {
-    background(51);
+    background("thistle");
     
         // sets original colors
     var colors = color(input3.value);
