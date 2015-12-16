@@ -22,8 +22,10 @@ var hasMinion = false;
 var hasFrog = false;
 var hasOrnaments = false;
 
+
 function setup() {
     createCanvas(1300, 700);
+
     // //Changes color of text
     button1.addEventListener("click", function() {
         var newColor = input1.value;
@@ -126,3 +128,4 @@ var color3=color(input5.value);
             drawSprites();
         }
 }
+
