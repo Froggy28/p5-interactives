@@ -22,44 +22,8 @@ var hasMinion = false;
 var hasFrog = false;
 var hasOrnaments = false;
 
-
 function setup() {
     createCanvas(1300, 700);
-    
-    // // uses input from input 3 to change stump
-    button3.addEventListener("click", function() {
-        var cc = color(input3.value);
-        fill(cc);
-        var stump = rect(610, 369, 70, 70);
-    });
-
-    // //Takes input from input 2 to change color of  first segment
-    button2.addEventListener("click", function() {
-        var c = color(input2.value);
-        fill(c);
-        var tri = triangle(473, 245, 645, 125, 795, 245);
-    });
-
-    // //Changes color of second segment!
-    button4.addEventListener("click", function() {
-        var ccc = color(input4.value);
-        fill(ccc);
-        var tri2 = triangle(455, 310, 645, 190, 815, 310);
-    });
-
-    // //Changes color of third segment!
-    button5.addEventListener("click", function() {
-        var cccc = color(input5.value);
-        fill(cccc);
-        var tri3 = triangle(455, 370, 645, 200, 825, 370);
-    });
-    
-    button6.addEventListener("click", function() {
-        var topColor = color(input6.value);
-        fill(topColor);
-        var topping = ellipse(645, 120, 50, 50);
-    });
-
     // //Changes color of text
     button1.addEventListener("click", function() {
         var newColor = input1.value;
@@ -88,12 +52,16 @@ function setup() {
 function draw() {
     background("thistle");
     
-        // sets original colors
-    var colors = color(input3.value);
+        // changes colors of stump
+    var colors = button3.addEventListener("click", function() {
+        var cc = color(input3.value);
+        fill(cc);
+    });
+
     fill(colors);
     var stump = rect(610, 360, 70, 70);
 
-    //sets original colors for tree
+    //changes colors for tree
 
 var color3=color(input5.value);
     fill(color3);
