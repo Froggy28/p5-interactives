@@ -1,16 +1,16 @@
 var button1 = document.getElementById("button1");
 var input1 = document.getElementById("input1");
 var theParagraph = document.getElementById("theParagraph");
-var input2 = document.getElementById("input2");
-var button2 = document.getElementById("button2");
-var input3 = document.getElementById("input3");
-var button3 = document.getElementById("button3");
-var input4 = document.getElementById("input4");
-var button4 = document.getElementById("button4");
-var input5 = document.getElementById("input5");
-var button5 = document.getElementById("button5");
-var input6 = document.getElementById("input6");
-var button6 = document.getElementById("button6");
+var treeTopInput = document.getElementById("treeTopInput");
+var treeTopButton = document.getElementById("treeTopButton");
+var stumpInput = document.getElementById("stumpInput");
+var stumpButton = document.getElementById("stumpButton");
+var treeMidInput = document.getElementById("treeMidInput");
+var treeMidButton = document.getElementById("treeMidButton");
+var treeBotInput = document.getElementById("treeBotInput");
+var treeBotButton = document.getElementById("treeBotButton");
+var topInput = document.getElementById("topInput");
+var topButton = document.getElementById("topButton");
 var button7 = document.getElementById("button7");
 var button8 = document.getElementById("button8");
 var button9 = document.getElementById("button9");
@@ -56,38 +56,54 @@ function setup() {
     });
     button12.addEventListener("click",function() {
         hasFrogs=!hasFrogs;
-    })
+    });
 }
+
+
+var stumpColor = "brown";
+var treeTopColor = "green";
+var treeMidColor = "green";
+var treeBotColor = "green";
+var topColor = "silver";
+
+
+
+stumpButton.addEventListener("click", function() {
+        stumpColor = stumpInput.value;
+});
+
+treeBotButton.addEventListener("click", function() {
+        var cccc = color(treeBotInput.value);
+    });
+
 
 function draw() {
     background("thistle");
 
-   var colors = button3.addEventListener("click", function() {
-        var cc = color(input3.value);
-        fill(cc);
-    });
-
-    fill(colors);
+    //Draws Stump
+    fill(stumpColor);
     var stump = rect(610, 360, 70, 70);
+            
+    // Draws Bottom Tree
+    fill(treeBotColor);
+    var treeBot = triangle(455, 370, 645, 200, 825, 370);
 
+ 
     //changes colors for tree
 
-var color3=color(input5.value);
-    fill(color3);
-    var tri3 = triangle(455, 370, 645, 200, 825, 370);
-    
-    var color2=color(input4.value);
-    fill(color2);
-    var tri2 = triangle(455, 310, 645, 190, 815, 310);
-    
-    var color1=color(input2.value);
-    fill(color1)
-    var tri = triangle(473, 245, 645, 125, 795, 245);
 
-//changes topper color
-     var co = color(input6.value);
-    fill(co);
-    var topping = ellipse(645, 120, 50, 50);
+//     var color2=color(treeMidInput.value);
+//     fill(color2);
+//     var tri2 = triangle(455, 310, 645, 190, 815, 310);
+    
+//     var color1=color(treeTopInput.value);
+//     fill(color1);
+//     var tri = triangle(473, 245, 645, 125, 795, 245);
+
+// //changes topper color
+//      var co = color(topInput.value);
+//     fill(co);
+//     var topping = ellipse(645, 120, 50, 50);
 
 
     if (hasFrog === true) {
@@ -128,7 +144,7 @@ var color3=color(input5.value);
         drawSprites();
     }
     if(hasFrogs===true){
-        var frogImg=loadImage("frog2.png")
+        var frogImg=loadImage("frog2.png");
        imageSprite = createSprite(620, 200);
         imageSprite.addImage(frogImg);
         imageSprite = createSprite(560, 260);
