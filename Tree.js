@@ -16,11 +16,13 @@ var button8 = document.getElementById("button8");
 var button9 = document.getElementById("button9");
 var button10 = document.getElementById("button10");
 var button11 = document.getElementById("button11");
-var button12=document.getElementById("button12");
+var button12 = document.getElementById("button12");
 var hasStar = false;
 var hasMinion = false;
 var hasFrog = false;
 var hasOrnaments = false;
+var hasPresents = false;
+var hasFrogs=false;
 
 
 function setup() {
@@ -45,21 +47,27 @@ function setup() {
 
     });
 
-    // //adding ornaments
+    // //adding ornaments and presents
     button10.addEventListener("click", function() {
         hasOrnaments = !hasOrnaments;
     });
+    button11.addEventListener("click", function() {
+        hasPresents = !hasPresents;
+    });
+    button12.addEventListener("click",function() {
+        hasFrogs=!hasFrogs;
+    })
 }
 
 function draw() {
     background("thistle");
-    
-        // changes colors of stump
-    var colors = button3.addEventListener("click", function() {
+
+   var colors = button3.addEventListener("click", function() {
         var cc = color(input3.value);
         fill(cc);
     });
-     fill(colors);
+
+    fill(colors);
     var stump = rect(610, 360, 70, 70);
 
     //changes colors for tree
@@ -71,12 +79,12 @@ var color3=color(input5.value);
     var color2=color(input4.value);
     fill(color2);
     var tri2 = triangle(455, 310, 645, 190, 815, 310);
-   
-    var color1= color(input2.value);
+    
+    var color1=color(input2.value);
     fill(color1)
     var tri = triangle(473, 245, 645, 125, 795, 245);
 
-
+//changes topper color
      var co = color(input6.value);
     fill(co);
     var topping = ellipse(645, 120, 50, 50);
@@ -89,7 +97,7 @@ var color3=color(input5.value);
         drawSprites();
         console.log("drawing frog");
     }
-    
+
     if (hasStar === true) {
         var img = loadImage("stars.png");
         imageSprite = createSprite(645, 120);
@@ -104,7 +112,37 @@ var color3=color(input5.value);
         drawSprites();
     }
     //puts presents under tree
-   button11.addEventListener("click", function() {
+
+    if (hasOrnaments === true) {
+        var ornament = loadImage("ornament.png");
+        imageSprite = createSprite(620, 200);
+        imageSprite.addImage(ornament);
+        imageSprite = createSprite(560, 260);
+        imageSprite.addImage(ornament);
+        imageSprite = createSprite(680, 280);
+        imageSprite.addImage(ornament);
+        imageSprite = createSprite(560, 330);
+        imageSprite.addImage(ornament);
+        imageSprite = createSprite(700, 340);
+        imageSprite.addImage(ornament);
+        drawSprites();
+    }
+    if(hasFrogs===true){
+        var frogImg=loadImage("frog2.png")
+       imageSprite = createSprite(620, 200);
+        imageSprite.addImage(frogImg);
+        imageSprite = createSprite(560, 260);
+        imageSprite.addImage(frogImg);
+        imageSprite = createSprite(680, 280);
+        imageSprite.addImage(frogImg);
+        imageSprite = createSprite(570, 330);
+        imageSprite.addImage(frogImg);
+        imageSprite = createSprite(700, 340);
+        imageSprite.addImage(frogImg);
+        drawSprites();
+    }
+    
+    if (hasPresents === true) {
         var presentimg = loadImage("present.png");
         imageSprite = createSprite(590, 400);
         imageSprite.addImage(presentimg);
@@ -112,21 +150,6 @@ var color3=color(input5.value);
         imageSprite2 = createSprite(720, 400);
         imageSprite2.addImage(presentimg2);
         drawSprites();
-
-    });
-    if (hasOrnaments === true) {
-            var ornament = loadImage("ornament.png");
-            imageSprite = createSprite(620, 200);
-            imageSprite.addImage(ornament);
-            imageSprite = createSprite(560, 260);
-            imageSprite.addImage(ornament);
-            imageSprite = createSprite(680, 280);
-            imageSprite.addImage(ornament);
-            imageSprite = createSprite(560, 330);
-            imageSprite.addImage(ornament);
-            imageSprite = createSprite(700, 340);
-            imageSprite.addImage(ornament);
-            drawSprites();
-        }
+    }
+    
 }
-
