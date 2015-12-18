@@ -78,7 +78,12 @@ treeBoButton.addEventListener("click", function() {
 treeMidButton.addEventListener("click", function() {
     treeMidColor=treeMidInput.value;
 });
-
+treeTopButton.addEventListener("click",function() {
+    treeTopColor=treeTopInput.value;
+})
+topButton.addEventListener("click", function() {
+    topColor=topInput.value;
+})
 
 function draw() {
     background("thistle");
@@ -87,46 +92,43 @@ function draw() {
     fill(stumpColor);
     var stump = rect(610, 360, 70, 70);
             
-    // Draws Bottom Tree
+    // Draws + changes for Bottom Tree
     fill(treeBoColor);
     var treeBottom = triangle(455, 370, 645, 200, 825, 370);
 
  
-    //changes colors for tree
-
-
+    //changes and draws for second segment
     fill(treeMidColor);
     var tri2 = triangle(455, 310, 645, 190, 815, 310);
     
-//     var color1=color(treeTopInput.value);
-//     fill(color1);
-//     var tri = triangle(473, 245, 645, 125, 795, 245);
+//Changes and draws for first segment
+    fill(treeTopColor);
+    var tri = triangle(473, 245, 645, 125, 795, 245);
 
 // //changes topper color
-//      var co = color(topInput.value);
-//     fill(co);
-//     var topping = ellipse(645, 120, 50, 50);
+    fill(topColor);
+    var topping = ellipse(645, 120, 50, 50);
 
 
     if (hasFrog === true) {
         var img3 = loadImage("froggy.png");
-        imageSprite = createSprite(645, 100);
-        imageSprite.addImage(img3);
+        var mySprite= createSprite(645, 100);
+        mySprite.addImage(img3);
         drawSprites();
         console.log("drawing frog");
     }
-
+    
     if (hasStar === true) {
         var img = loadImage("stars.png");
-        imageSprite = createSprite(645, 120);
-        imageSprite.addImage(img);
+       mySprite = createSprite(645, 120);
+        mySprite.addImage(img);
         drawSprites();
     }
 
     if (hasMinion === true) {
         var img2 = loadImage("minion.png");
-        imageSprite = createSprite(645, 80);
-        imageSprite.addImage(img2);
+        mySprite = createSprite(645, 80);
+        mySprite.addImage(img2);
         drawSprites();
     }
     //puts presents under tree
