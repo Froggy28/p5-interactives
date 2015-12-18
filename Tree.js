@@ -7,8 +7,8 @@ var stumpInput = document.getElementById("stumpInput");
 var stumpButton = document.getElementById("stumpButton");
 var treeMidInput = document.getElementById("treeMidInput");
 var treeMidButton = document.getElementById("treeMidButton");
-var treeBotInput = document.getElementById("treeBotInput");
-var treeBotButton = document.getElementById("treeBotButton");
+var treeBoInput = document.getElementById("treeBoInput");
+var treeBoButton = document.getElementById("treeBoButton");
 var topInput = document.getElementById("topInput");
 var topButton = document.getElementById("topButton");
 var button7 = document.getElementById("button7");
@@ -63,7 +63,7 @@ function setup() {
 var stumpColor = "brown";
 var treeTopColor = "green";
 var treeMidColor = "green";
-var treeBotColor = "green";
+var treeBoColor = "green";
 var topColor = "silver";
 
 
@@ -72,9 +72,12 @@ stumpButton.addEventListener("click", function() {
         stumpColor = stumpInput.value;
 });
 
-treeBotButton.addEventListener("click", function() {
-        var cccc = color(treeBotInput.value);
+treeBoButton.addEventListener("click", function() {
+        treeBoColor = treeBoInput.value;
     });
+treeMidButton.addEventListener("click", function() {
+    treeMidColor=treeMidInput.value;
+});
 
 
 function draw() {
@@ -85,16 +88,15 @@ function draw() {
     var stump = rect(610, 360, 70, 70);
             
     // Draws Bottom Tree
-    fill(treeBotColor);
-    var treeBot = triangle(455, 370, 645, 200, 825, 370);
+    fill(treeBoColor);
+    var treeBottom = triangle(455, 370, 645, 200, 825, 370);
 
  
     //changes colors for tree
 
 
-//     var color2=color(treeMidInput.value);
-//     fill(color2);
-//     var tri2 = triangle(455, 310, 645, 190, 815, 310);
+    fill(treeMidColor);
+    var tri2 = triangle(455, 310, 645, 190, 815, 310);
     
 //     var color1=color(treeTopInput.value);
 //     fill(color1);
