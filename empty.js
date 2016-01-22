@@ -26,7 +26,7 @@ function setup() {
 
   collectibles = new Group();
 
-  for (var i = 0; i < 100; i++) {
+  for (var i = 0; i < 500; i++) {
     var dot = createSprite(random(0, width), random(0, height));
     dot.addAnimation("normal", "donut.png");
     collectibles.add(dot);

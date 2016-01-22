@@ -66,8 +66,6 @@ var treeMidColor = "green";
 var treeBoColor = "green";
 var topColor = "silver";
 
-
-
 stumpButton.addEventListener("click", function() {
         stumpColor = stumpInput.value;
 });
@@ -115,7 +113,6 @@ function draw() {
         var mySprite= createSprite(645, 100);
         mySprite.addImage(img3);
         drawSprites();
-        console.log("drawing frog");
     }
     
     if (hasStar === true) {
@@ -171,5 +168,7 @@ function draw() {
         imageSprite2.addImage(presentimg2);
         drawSprites();
     }
-    
+//      var imageSprite= createSprite(0, 700);
+// drawSprites();
+
 }
