@@ -58,7 +58,7 @@ function draw(){
     var lanternBody=ellipse(670,280,300,200);
     
     fill(tailColor);
-        var tassleTail= triangle(650,489, 670, 410, 690,480);
+        var tassleTail= triangle(650,480, 670, 410, 690,480);
     
         fill(ballColor);
     var tassleBall=ellipse(670,397,40,40);
